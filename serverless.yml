@@ -1,0 +1,33 @@
+org: gawlk
+app: pdf_aws
+service:
+  name: pdf
+
+plugins:
+  - serverless-offline
+  - serverless-apigw-binary
+  - serverless-domain-manager
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  excludeDevDependencies: true
+  timeout: 30
+
+custom:
+  apigwBinary:
+    types:
+      - '*/*'
+  customDomain:
+    domainName: aws.quickbook.io
+
+functions:
+  pdf:
+    handler: pdf.pdf
+    events:
+      - http:
+          path: pdf
+          method: post
+          cors:
+            origin: 'https://quickbook.io'
+            allowCredentials: false

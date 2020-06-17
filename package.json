@@ -1,0 +1,29 @@
+{
+  "name": "quickbookio/generator",
+  "version": "0.1.0",
+  "description": "The AWS PDF generator",
+  "homepage": "https://github.com/quickbookio/generator",
+  "author": {
+    "name": "Kevin Gawlik",
+    "email": "kevin@gawlik.io",
+    "url": "https://github.com/gawlk"
+  },
+  "contributors": [],
+  "license": "MIT",
+  "main": "pdf.js",
+  "scripts": {
+    "deploy": "serverless deploy --stage development",
+    "create_domain": "SLS_DEBUG=* serverless create_domain",
+    "delete_domain": "SLS_DEBUG=* serverless delete_domain",
+  },
+  "dependencies": {
+    "chrome-aws-lambda": "^2.1.1",
+    "puppeteer-core": "^2.1.1"
+  },
+  "devDependencies": {
+    "serverless": "^1.67.1",
+    "serverless-apigw-binary": "^0.4.4",
+    "serverless-domain-manager": "^4.1.1",
+    "serverless-offline": "^6.1.4"
+  }
+}
