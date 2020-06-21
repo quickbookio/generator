@@ -28,7 +28,7 @@ module.exports.pdf = async (event, context) => {
             deviceScaleFactor: 1,
         });
 
-        const url = `https://quickbook.io/#/${Buffer.from(event.body, 'base64').toString() || ''}`;
+        const url = `https://quickbook.io/#/app/${Buffer.from(event.body, 'base64').toString() || ''}`;
 
         console.log(url);
 

@@ -24,3 +24,9 @@ npm-debug.log*
 # ---
 
 .serverless/
+
+# ---
+# YARN
+# ---
+
+yarn-error.log
